@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Invincibles</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="main.css">
+  <link rel="icon" type="image/x-icon" href="images/0.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {
+      font-family: "Raleway", sans-serif
+    }
+
+    body, html {
+      height: 100%;
+      line-height: 1.8;
+    }
+
+    /* Full height image header */
+    .bgimg-1 {
+      background-position: center;
+      background-size: cover;
+      background-image: url("images/8.jpg");
+      min-height: 100%;
+    }
+
+    .invincible-bar .invincible-button {
+      padding: 16px;
+    }
+
+    .image-grid {
+      --gap: 16px;
+      --num-cols: 4;
+      --row-height: 300px;
+
+      box-sizing: border-box;
+      padding: var(--gap);
+
+      display: grid;
+      grid-template-columns: repeat(var(--num-cols), 1fr);
+      grid-auto-rows: var(--row-height);
+      gap: var(--gap);
+    }
+
+    .image-grid>img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-grid-col-2 {
+      grid-column: span 2;
+    }
+
+    .image-grid-row-2 {
+      grid-row: span 2;
+    }
+
+    /* Anything under 1024px */
+    @media screen and (max-width: 1024px) {
+      .image-grid {
+        --num-cols: 2;
+        --row-height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar (sit on top) -->
+  <div class="invincible-top">
+    <div class="invincible-bar invincible-white invincible-card" id="myNavbar">
+      <a href="#home" class="invincible-bar-item invincible-button invincible-wide"><img src="images/0.png" width="95" height="60"></a>
+
+      <!-- Right-sided navbar links -->
+      <div class="invincible-right invincible-hide-small">
+        <a href="#about" class="invincible-bar-item invincible-button">ABOUT</a>
+        <a href="#team" class="invincible-bar-item invincible-button"><i class="fa fa-user"></i> TEAM</a>
+        <a href="#work" class="invincible-bar-item invincible-button"><i class="fa fa-picture-o"></i> GALLERY</a>
+        <a href="#contact" class="invincible-bar-item invincible-button"><i class="fa fa-envelope"></i> CONTACT</a>
+      </div>
+
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+      <a href="javascript:void(0)" class="invincible-bar-item invincible-button invincible-right invincible-hide-large invincible-hide-medium" onclick="invincible_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Sidebar on small screens when clicking the menu icon -->
+  <nav class="invincible-sidebar invincible-bar-block invincible-black invincible-card invincible-animate-left invincible-hide-medium invincible-hide-large" style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="invincible_close()" class="invincible-bar-item invincible-button invincible-large invincible-padding-16">Close ×</a>
+    <a href="#about" onclick="invincible_close()" class="invincible-bar-item invincible-button">ABOUT</a>
+    <a href="#team" onclick="invincible_close()" class="invincible-bar-item invincible-button">TEAM</a>
+    <a href="#work" onclick="invincible_close()" class="invincible-bar-item invincible-button">GALLERY</a>
+    <a href="#contact" onclick="invincible_close()" class="invincible-bar-item invincible-button">CONTACT</a>
+  </nav>
+
+  <!-- Header with full-height image -->
+  <header class="bgimg-1 invincible-display-container invincible-grayscale-min" id="home">
+    <div class="invincible-display-left invincible-text-white" style="padding:48px">
+      <span class="invincible-jumbo invincible-hide-small">Welcome to The Invincibles</span><br>
+      <span class="invincible-xxlarge invincible-hide-large invincible-hide-medium">Welcome to The Invincibles</span><br>
+      <span class="invincible-large">Victoria Concordia Crescit</span>
+      <p><a href="#about" class="invincible-button invincible-white invincible-padding-large invincible-large invincible-margin-top invincible-opacity invincible-hover-opacity-off">Learn more and start today</a></p>
+    </div> 
+    <div class="invincible-display-bottomleft invincible-text-grey invincible-large" style="padding:24px 48px">
+      <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official invincible-hover-opacity"></i></a>
+      <a href="https://www.instagram.com/invincibles_aluedu/" target="_blank"><i class="fa fa-instagram invincible-hover-opacity"></i></a>
+      <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter invincible-hover-opacity"></i></a>
+      <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin invincible-hover-opacity"></i></a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <div class="invincible-container" style="padding:128px 16px" id="about">
+    <h3 class="invincible-center">ABOUT US</h3>
+    <p class="invincible-center invincible-large">Key features of our think tank</p>
+    <div class="invincible-row-padding invincible-center" style="margin-top:64px">
+      <div class="invincible-quarter">
+        <i class="fa fa-desktop invincible-margin-bottom invincible-jumbo invincible-center"></i>
+        <p class="invincible-large">Mission</p>
+        <p>Our mission is to improve education quality through technology to promote sustainable development in Nigeria.</p>
+      </div>
+      <div class="invincible-quarter">
+        <i class="fa fa-heart invincible-margin-bottom invincible-jumbo"></i>
+        <p class="invincible-large">Passion</p>
+        <p>As a think tank, we are passionate about education, women empowerment, job creation and agriculture.</p>
+      </div>
+      <div class="invincible-quarter">
+        <i class="fa fa-diamond invincible-margin-bottom invincible-jumbo"></i>
+        <p class="invincible-large">Wicked Problem</p>
+        <p>On the basis of UNICEF, the literacy rate of women in Nigeria in 2020 is 63%. How can technology enhance education rate to 75% by 2035 to promote sustainable development of the country.</p>
+      </div>
+      <div class="invincible-quarter">
+        <i class="fa fa-cog invincible-margin-bottom invincible-jumbo"></i>
+        <p class="invincible-large">Creativity</p>
+        <p>Its the ability to think outside the box. We make decisions, create something new and generate a lot of ideas.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Promo Section-->
+  <div class="invincible-container invincible-light-grey" style="padding:128px 16px">
+    <div class="invincible-row-padding">
+      <div class="invincible-col m6">
+        <h3>Why Education?</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore.</p>
+        <p><a href="#work" class="invincible-button invincible-black"><i class="fa fa-th"> </i> View Our Works</a></p>
+      </div>
+      <div class="invincible-col m6">
+        <img class="invincible-image invincible-round-large" src="images/11.jpeg" alt="Education" width="700" height="394">
+      </div>
+    </div>
+  </div>
+
+  <!-- Team Section -->
+  <div class="invincible-container" style="padding:128px 16px" id="team">
+    <h3 class="invincible-center">THE TEAM</h3>
+    <p class="invincible-center invincible-large">The ones who run this team</p>
+    <div class="invincible-row-padding" style="margin-top:64px">
+      <div class="invincible-col l3 m6 invincible-margin-bottom">
+        <div class="invincible-card">
+          <img src="images/24.jpg" alt="Sugi" style="width:100%">
+          <div class="invincible-container">
+            <h3>Consolee Sugi</h3>
+            <p class="invincible-opacity">Team Lead</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><a href="mailto:c.sugi@alustudent.com" target="_blank" style="text-decoration: none;"><button class="invincible-button invincible-light-grey invincible-block"><i class="fa fa-envelope"></i> Contact</button></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="invincible-col l3 m6 invincible-margin-bottom">
+        <div class="invincible-card">
+          <img src="images/16.jpg" alt="Bongie" style="width:100%">
+          <div class="invincible-container">
+            <h3>Mayibongwe Musariri</h3>
+            <p class="invincible-opacity">Art Director</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><a href="mailto:m.musariri@alustudent.com" target="_blank" style="text-decoration: none;"><button class="invincible-button invincible-light-grey invincible-block"><i class="fa fa-envelope"></i> Contact</button></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="invincible-col l3 m6 invincible-margin-bottom">
+        <div class="invincible-card">
+          <img src="images/17.jpg" alt="Teni" style="width:100%">
+          <div class="invincible-container">
+            <h3>Ajani Abdulhameed</h3>
+            <p class="invincible-opacity">Web Designer</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><a href="mailto:a.ajani@alustudent.com" target="_blank" style="text-decoration: none;"><button class="invincible-button invincible-light-grey invincible-block"><i class="fa fa-envelope"></i> Contact</button></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="invincible-col l3 m6 invincible-margin-bottom">
+        <div class="invincible-card">
+          <img src="images/18.jpg" alt="Shema" style="width:100%">
+          <div class="invincible-container">
+            <h3>Shema Bashyitsi Pacifique</h3>
+            <p class="invincible-opacity">Designer</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><a href="mailto:p.shema1@alustudent.com" target="_blank" style="text-decoration: none;"><button class="invincible-button invincible-light-grey invincible-block"><i class="fa fa-envelope"></i> Contact</button></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="invincible-col l3 m6 invincible-margin-bottom">
+        <div class="invincible-card">
+          <img src="images/15.jpg" alt="Valentin" style="width:100%">
+          <div class="invincible-container">
+            <h3>Nshimiyimana Valentin</h3>
+            <p class="invincible-opacity">Web Designer</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><a href="mailto:v.nshimiyim@alustudent.com" target="_blank" style="text-decoration: none;"><button class="invincible-button invincible-light-grey invincible-block"><i class="fa fa-envelope"></i> Contact</button></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="invincible-col l3 m6 invincible-margin-bottom">
+        <div class="invincible-card">
+          <img src="images/19.jpg" alt="Xavier" style="width:100%">
+          <div class="invincible-container">
+            <h3>Gnondoyi Xavier</h3>
+            <p class="invincible-opacity">Web Designer</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><a href="mailto:d.gnondoyi@alustudent.com" target="_blank" style="text-decoration: none;"><button class="invincible-button invincible-light-grey invincible-block"><i class="fa fa-envelope"></i> Contact</button></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="invincible-col l3 m6 invincible-margin-bottom">
+        <div class="invincible-card">
+          <img src="/invincibleimages/team3.jpg" alt="Hope" style="width:100%">
+          <div class="invincible-container">
+            <h3>Jeanine Hope Ukundimana</h3>
+            <p class="invincible-opacity">Web Designer</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p><a href="mailto:j.ukundiman@alustudent.com" target="_blank" style="text-decoration: none;"><button class="invincible-button invincible-light-grey invincible-block"><i class="fa fa-envelope"></i> Contact</button></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Promo Section "Statistics" -->
+  <div class="invincible-container invincible-row invincible-center invincible-dark-grey invincible-padding-64">
+    <div class="invincible-quarter">
+      <span class="invincible-xxlarge">18+</span>
+      <br>Classes
+    </div>
+    <div class="invincible-quarter">
+      <span class="invincible-xxlarge">7</span>
+      <br>Challenges
+    </div>
+    <div class="invincible-quarter">
+      <span class="invincible-xxlarge">7+</span>
+      <br>Team meetings
+    </div>
+    <div class="invincible-quarter">
+      <span class="invincible-xxlarge">1</span>
+      <br>Family
+    </div>
+  </div>
+
+  <!-- Work Section -->
+  <div class="invincible-container" style="padding:128px 16px" id="work">
+    <h3 class="invincible-center">GALLERY</h3>
+    <p class="invincible-center invincible-large">Our journey so far</p>
+
+    <div class="image-grid">
+      <img src="images/challenges/1.jpeg" alt="architecture">
+      <img src="images/challenges/2.jpg" alt="architecture">
+      <img src="images/challenges/3.jpeg" alt="architecture">
+      <img src="images/challenges/4.jpg" alt="architecture">
+      <img src="images/challenges/5.jpg" alt="architecture">
+      <img src="images/challenges/6.jpeg" alt="architecture">
+      <img src="images/challenges/7.jpg" alt="architecture">
+      <img src="images/challenges/8.jpeg" alt="architecture">
+      <img src="images/challenges/9.jpg" alt="architecture">
+      <img src="images/challenges/10.jpeg" alt="architecture">
+      <img src="images/challenges/11.jpg" alt="architecture">
+      <img src="images/challenges/12.jpg" alt="architecture">
+      <img src="images/challenges/13.jpg" alt="architecture">
+      <img src="images/challenges/14.jpg" alt="architecture">
+      <img src="images/challenges/15.jpg" alt="architecture">
+      <img src="images/challenges/17.jpg" alt="architecture">
+      <img src="images/challenges/18.jpeg" alt="architecture">
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="invincible-container invincible-light-grey" style="padding:128px 16px" id="contact">
+    <h3 class="invincible-center">CONTACT</h3>
+    <p class="invincible-center invincible-large">Lets get in touch. Send us a message:</p>
+    <div style="margin-top:48px">
+      <p><i class="fa fa-map-marker fa-fw invincible-xxlarge invincible-margin-right"></i> African Leadership University, Kigali, Rwanda</p>
+      <p><i class="fa fa-phone fa-fw invincible-xxlarge invincible-margin-right"></i> Phone: +250.....</p>
+      <p><i class="fa fa-envelope fa-fw invincible-xxlarge invincible-margin-right"> </i> Email: invincibles@alueducation.com</p>
+      <br>
+      <form action="/action_page.php" target="_blank">
+        <p><input class="invincible-input invincible-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="invincible-input invincible-border" type="text" placeholder="Email" required name="Email"></p>
+        <p><input class="invincible-input invincible-border" type="text" placeholder="Subject" required name="Subject"></p>
+        <p><input class="invincible-input invincible-border" type="text" placeholder="Message" required name="Message"></p>
+        <p>
+          <button class="invincible-button invincible-black" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </p>
+      </form>
+      <!-- Image of location/map -->
+      <img src="images/10.jpg" class="invincible-image" style="width:100%;margin-top:48px">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="invincible-center invincible-black invincible-padding-64">
+    <a href="#home" class="invincible-button invincible-light-grey"><i class="fa fa-arrow-up invincible-margin-right"></i>To the top</a>
+    <div class="invincible-xlarge invincible-section">
+      <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official invincible-hover-opacity"></i></a>
+      <a href="https://www.instagram.com/invincibles_aluedu/" target="_blank"><i class="fa fa-instagram invincible-hover-opacity"></i></a>
+      <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter invincible-hover-opacity"></i></a>
+      <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin invincible-hover-opacity"></i></a>
+    </div>
+    <p><i class="fa fa-copyright"></i> 2022 The Invincibles. All Rights Reserved.</p>
+  </footer>
+   
+  <script>
+
+  // Toggle between showing and hiding the sidebar when clicking the menu icon
+  var mySidebar = document.getElementById("mySidebar");
+
+  function invincible_open() {
+    if (mySidebar.style.display === 'block') {
+      mySidebar.style.display = 'none';
+    } else {
+      mySidebar.style.display = 'block';
+    }
+  }
+
+  // Close the sidebar with the close button
+  function invincible_close() {
+      mySidebar.style.display = "none";
+  }
+  </script>
+
+</body>
+</html>
