@@ -725,7 +725,15 @@ a {
 .invincible-text-sand,.invincible-hover-text-sand:hover{color:#fdf5e6!important}
 .invincible-text-teal,.invincible-hover-text-teal:hover{color:#009688!important}
 .invincible-text-yellow,.invincible-hover-text-yellow:hover{color:#d2be0e!important}
-.invincible-text-white,.invincible-hover-text-white:hover{color:#fff!important}
+
+.invincible-text-white,.invincible-hover-text-white:hover {
+	color:#fff!important;
+}
+
+.invincible-text-shadow {
+	text-shadow: 2px 2px #000;
+}
+
 .invincible-text-black,.invincible-hover-text-black:hover{color:#000!important}
 .invincible-text-grey,.invincible-hover-text-grey:hover,.invincible-text-gray,.invincible-hover-text-gray:hover{color:#757575!important}
 .invincible-text-light-grey,.invincible-hover-text-light-grey:hover,.invincible-text-light-gray,.invincible-hover-text-light-gray:hover{color:#f1f1f1!important}
