@@ -30,41 +30,44 @@
       padding: 16px;
     }
 
-    .image-grid {
-      --gap: 16px;
-      --num-cols: 4;
-      --row-height: 300px;
+    /* Slideshow container */
+  .slideshow-container {
+    box-sizing: border-box;
+    max-width: 500px;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 5px;
+  }
 
-      box-sizing: border-box;
-      padding: var(--gap);
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
 
-      display: grid;
-      grid-template-columns: repeat(var(--num-cols), 1fr);
-      grid-auto-rows: var(--row-height);
-      gap: var(--gap);
-    }
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
 
-    .image-grid>img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  /* On hover, add a grey background color */
+  .prev:hover, .next:hover {
+    background-color: #f1f1f1;
+    color: black;
+  }
 
-    .image-grid-col-2 {
-      grid-column: span 2;
-    }
-
-    .image-grid-row-2 {
-      grid-row: span 2;
-    }
-
-    /* Anything under 1024px */
-    @media screen and (max-width: 1024px) {
-      .image-grid {
-        --num-cols: 2;
-        --row-height: 200px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -100,7 +103,7 @@
   </nav>
 
   <!-- Header with full-height image -->
-  <header class="bgimg-1 invincible-display-container" id="home">
+  <header class="bgimg-1 invincible-display-container invincible-greyscale-min" id="home">
     <div class="invincible-display-left invincible-text-white" style="padding:48px">
       <span class="invincible-jumbo invincible-hide-small invincible-text-shadow">Welcome to The Invincibles</span><br>
       <span class="invincible-xxlarge invincible-hide-large invincible-hide-medium invincible-text-shadow">Welcome to The Invincibles</span><br>
@@ -168,7 +171,7 @@
           <div class="invincible-container">
             <h3>Consolee Sugi</h3>
             <p class="invincible-opacity">Team Lead</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p>I want to protect human health by reducing household pollution and smoke inhalation in the environment.</p>
             <p><a href="mailto:c.sugi@alustudent.com" target="_blank" style="text-decoration: none;"><button class="invincible-button invincible-light-grey invincible-block"><i class="fa fa-envelope"></i> Contact</button></a></p>
           </div>
         </div>
@@ -178,8 +181,8 @@
           <img src="images/16.jpg" alt="Bongie" style="width:100%">
           <div class="invincible-container">
             <h3>Mayibongwe Musariri</h3>
-            <p class="invincible-opacity">Art Director</p>
-            <p> l want to develop the African continent by reducing the cost of food in Africa.</p>
+            <p class="invincible-opacity">Team Shaper | Implementer</p>
+            <p> l am looking forward to developing the African continent by reducing the cost of food to ensure food security in Africa.</p>
             <p><a href="mailto:m.musariri@alustudent.com" target="_blank" style="text-decoration: none;"><button class="invincible-button invincible-light-grey invincible-block"><i class="fa fa-envelope"></i> Contact</button></a></p>
           </div>
         </div>
@@ -190,7 +193,7 @@
           <div class="invincible-container">
             <h3>Ajani Abdulhameed</h3>
             <p class="invincible-opacity">Graphics and Web Designer</p>
-            <p>I enjoy art and the creative process involved in it. I am also passionate about helping others.</p>
+            <p>I enjoy art and design and the creative process involved in it. I am also passionate about helping others.</p>
             <p><a href="mailto:a.ajani@alustudent.com" target="_blank" style="text-decoration: none;"><button class="invincible-button invincible-light-grey invincible-block"><i class="fa fa-envelope"></i> Contact</button></a></p>
           </div>
         </div>
@@ -200,7 +203,7 @@
           <img src="images/18.jpg" alt="Shema" style="width:100%">
           <div class="invincible-container">
             <h3>Shema Pacifique</h3>
-            <p class="invincible-opacity">Designer</p>
+            <p class="invincible-opacity">Videographer</p>
             <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
             <p><a href="mailto:p.shema1@alustudent.com" target="_blank" style="text-decoration: none;"><button class="invincible-button invincible-light-grey invincible-block"><i class="fa fa-envelope"></i> Contact</button></a></p>
           </div>
@@ -211,8 +214,8 @@
           <img src="images/15.jpg" alt="Valentin" style="width:100%">
           <div class="invincible-container">
             <h3>Nshimiyimana Valentin</h3>
-            <p class="invincible-opacity">Web Designer</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <p class="invincible-opacity">Creative Director</p>
+            <p>I want to contribute to the development of the African industry starting from my country by producing creative and competitive handcrafts.</p>
             <p><a href="mailto:v.nshimiyim@alustudent.com" target="_blank" style="text-decoration: none;"><button class="invincible-button invincible-light-grey invincible-block"><i class="fa fa-envelope"></i> Contact</button></a></p>
           </div>
         </div>
@@ -222,7 +225,7 @@
           <img src="images/19.jpg" alt="Xavier" style="width:100%">
           <div class="invincible-container">
             <h3>Gnondoyi Xavier</h3>
-            <p class="invincible-opacity">Web Designer</p>
+            <p class="invincible-opacity">Resource Manager</p>
             <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
             <p><a href="mailto:d.gnondoyi@alustudent.com" target="_blank" style="text-decoration: none;"><button class="invincible-button invincible-light-grey invincible-block"><i class="fa fa-envelope"></i> Contact</button></a></p>
           </div>
@@ -232,8 +235,8 @@
         <div class="invincible-card">
           <img src="images/25.jpg" alt="Hope" style="width:100%">
           <div class="invincible-container">
-            <h3>Hope Ukundimana</h3>
-            <p class="invincible-opacity">Web Designer</p>
+            <h3>Jeanine Hope</h3>
+            <p class="invincible-opacity">Team Worker</p>
             <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
             <p><a href="mailto:j.ukundiman@alustudent.com" target="_blank" style="text-decoration: none;"><button class="invincible-button invincible-light-grey invincible-block"><i class="fa fa-envelope"></i> Contact</button></a></p>
           </div>
@@ -267,25 +270,156 @@
     <h3 class="invincible-center">GALLERY</h3>
     <p class="invincible-center invincible-large">Our journey so far</p>
 
-    <div class="image-grid">
-      <img src="images/challenges/1.jpeg" alt="architecture">
-      <img src="images/challenges/2.jpg" alt="architecture">
-      <img src="images/challenges/3.jpeg" alt="architecture">
-      <img src="images/challenges/4.jpg" alt="architecture">
-      <img src="images/challenges/5.jpg" alt="architecture">
-      <img src="images/challenges/6.jpeg" alt="architecture">
-      <img src="images/challenges/7.jpg" alt="architecture">
-      <img src="images/challenges/8.jpeg" alt="architecture">
-      <img src="images/challenges/9.jpg" alt="architecture">
-      <img src="images/challenges/10.jpeg" alt="architecture">
-      <img src="images/challenges/11.jpg" alt="architecture">
-      <img src="images/challenges/12.jpg" alt="architecture">
-      <img src="images/challenges/13.jpg" alt="architecture">
-      <img src="images/challenges/14.jpg" alt="architecture">
-      <img src="images/challenges/15.jpg" alt="architecture">
-      <img src="images/challenges/17.jpg" alt="architecture">
-      <img src="images/challenges/18.jpeg" alt="architecture">
+    <div class="slideshow-container">
+      <div class="mySlides1">
+        <img src="images/challenge1/0.png" style="width: 100%;">
+      </div>
+
+      <div class="mySlides1">
+        <img src="images/challenge1/1.jpeg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides1">
+         <img src="images/challenge1/2.jpeg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides1">
+         <img src="images/challenge1/3.jpeg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides1">
+         <img src="images/challenge1/4.jpeg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides1">
+         <img src="images/challenge1/5.jpeg" style="width: 100%;">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
     </div>
+
+
+
+    <div class="slideshow-container">
+      <div class="mySlides2">
+        <img src="images/challenge2/0.png" style="width: 100%;">
+      </div>
+
+      <div class="mySlides2">
+        <img src="images/challenge2/1.jpg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides2">
+        <img src="images/challenge2/2.jpg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides2">
+        <img src="images/challenge2/3.jpg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides2">
+        <img src="images/challenge2/4.jpg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides2">
+        <img src="images/challenge2/5.jpg" style="width: 100%;">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+    </div>
+
+
+
+    <div class="slideshow-container">
+      <div class="mySlides3">
+        <img src="images/challenge3/6.png" style="width: 100%;">
+      </div>
+
+      <div class="mySlides3">
+        <img src="images/challenge3/0.jpg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides3">
+        <img src="images/challenge3/1.jpg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides3">
+        <img src="images/challenge3/2.jpg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides3">
+        <img src="images/challenge3/3.jpg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides3">
+        <img src="images/challenge3/4.jpg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides3">
+        <img src="images/challenge3/5.jpg" style="width: 100%;">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+    </div>
+
+
+
+    <div class="slideshow-container">
+      <div class="mySlides4">
+        <img src="images/challenge4/0.png" style="width: 100%;">
+      </div>
+
+      <div class="mySlides4">
+        <img src="images/challenge2/5.jpg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides4">
+        <img src="images/challenge2/4.jpg" style="width: 100%;">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
+    </div>
+
+
+
+    <div class="slideshow-container">
+      <div class="mySlides5">
+        <img src="images/challenge5/3.png" style="width: 100%;">
+      </div>
+
+      <div class="mySlides5">
+        <img src="images/challenge5/0.jpg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides5">
+        <img src="images/challenge5/1.jpg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides5">
+        <img src="images/challenge5/2.jpg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides5">
+        <img src="images/challenge5/4.jpeg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides5">
+        <img src="images/challenge5/5.jpg" style="width: 100%;">
+      </div>
+
+      <div class="mySlides5">
+        <img src="images/challenge5/6.jpg" style="width: 100%;">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
+    </div>
+
+    
   </div>
 
   <!-- Contact Section -->
@@ -341,6 +475,29 @@
   // Close the sidebar with the close button
   function invincible_close() {
       mySidebar.style.display = "none";
+  }
+
+  var slideIndex = [1,1,1,1,1];
+  var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5"]
+  showSlides(1, 0);
+  showSlides(1, 1);
+  showSlides(1, 2);
+  showSlides(1, 3);
+  showSlides(1, 4);
+
+  function plusSlides(n, no) {
+    showSlides(slideIndex[no] += n, no);
+  }
+
+  function showSlides(n, no) {
+    var i;
+    var x = document.getElementsByClassName(slideId[no]);
+    if (n > x.length) {slideIndex[no] = 1}    
+    if (n < 1) {slideIndex[no] = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    x[slideIndex[no]-1].style.display = "block";  
   }
   </script>
 
